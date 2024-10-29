@@ -1,19 +1,25 @@
 {
-    "manifest_version": 3,
-    "name": "테스트",
-    "version": "1.0",
-    "description": "This is my first Chrome extension!",
-    "permissions": ["storage", "activeTab", "scripting"],
-    "action": {
-      "default_popup": "popup.html",
-      "default_icon": {
-        "16": "icon.png",
-        "48": "icon.png",
-        "128": "icon.png"
-      }
-    },
-    "background": {
-      "service_worker": "background.js"
+  "manifest_version": 3,
+  "name": "3줄요약",
+  "version": "1.0",
+  "description": "3줄요약 서비스입니다.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
     }
-  }
-  
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "host_permissions": ["<all_urls>"]
+}
