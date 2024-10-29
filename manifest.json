@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "3줄요약",
-  "version": "1.0",
+  "version": "0.1.0",
   "description": "3줄요약 서비스입니다.",
   "permissions": ["storage", "activeTab", "scripting"],
   "background": {
